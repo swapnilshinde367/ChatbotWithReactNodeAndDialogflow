@@ -1,0 +1,29 @@
+{
+  "name": "outlinebot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "9.7.1",
+    "npm": "6.0.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "backend": "nodemon index.js",
+    "frontend": "npm run front --prefix client",
+    "dev": "concurrently \"npm run backend\"  \"npm run start --prefix client\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^3.5.1",
+    "dialogflow": "^0.4.0",
+    "dialogflow-fulfillment": "^0.3.0-beta.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.2",
+    "nodemon": "^1.17.4",
+    "react-native-uuid": "^1.4.9",
+    "react-router-dom": "^4.2.2"
+  }
+}
