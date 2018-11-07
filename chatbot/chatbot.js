@@ -23,8 +23,6 @@ const Registration = mongoose.model('registration');
 module.exports = {
 	textQuery: async function(text, parameters = {}) {
 
-		console.log( text );
-		console.log( parameters.sessionid );
 		let self = module.exports;
 		const request = {
 			session: sessionClient.sessionPath( projectId, parameters.sessionid ),
@@ -48,9 +46,6 @@ module.exports = {
 	},
 
 	eventQuery: async function(event, parameters = {}) {
-
-		console.log( event );
-		console.log( parameters.sessionid );
 
 		let self = module.exports;
 		const request = {
