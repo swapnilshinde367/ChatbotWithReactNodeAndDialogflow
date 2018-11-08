@@ -16,7 +16,7 @@ const credentials = {
 };
 
 const sessionClient = new dialogflow.SessionsClient({projectId, credentials});
-const sessionPath = sessionClient.sessionPath(projectId, sessionId);
+// const sessionPath = sessionClient.sessionPath(projectId, sessionId);
 
 const Registration = mongoose.model('registration');
 
