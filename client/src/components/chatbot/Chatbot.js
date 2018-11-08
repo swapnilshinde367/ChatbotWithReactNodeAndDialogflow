@@ -28,7 +28,7 @@ class Chatbot extends Component {
 		};
 
 		this.sessionid = uuid.v1();
-		console.log(this.sessionid);
+
 	}
 
 	async df_text_query (queryText) {
@@ -43,7 +43,7 @@ class Chatbot extends Component {
 		}
 		this.setState({ messages: [...this.state.messages, says]});
 		const res = await axios.post('/api/df_text_query',  {text: queryText, parameters:{ sessionid: this.sessionid} });
-		console.log(this.sessionid);
+
 		if (res.data.fulfillmentMessages ) {
 			for (let i = 0; i < res.data.fulfillmentMessages.length; i++) {
 				msg = res.data.fulfillmentMessages[i];
@@ -56,10 +56,8 @@ class Chatbot extends Component {
 		}
 	};
 
-
 	async df_event_query(eventName) {
 
-		console.log(this.sessionid);
 		const res = await axios.post('/api/df_event_query',  {event: eventName, parameters:{ sessionid: this.sessionid} });
 		let msg, says = {};
 		if (res.data.fulfillmentMessages ) {
